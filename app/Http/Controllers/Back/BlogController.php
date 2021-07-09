@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        $blogs = Blog::orderBy('id')->get();
+        return view('back.blog.index')->with('blogs', $blogs);
     }
 
     /**
@@ -24,7 +26,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.blog.form');
     }
 
     /**

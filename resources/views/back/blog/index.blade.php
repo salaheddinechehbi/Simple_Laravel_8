@@ -28,23 +28,32 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-8"></div>
+                            <div align="right" class="col-md-4 pull-right"><a href="{{ route('categories_add')}}" class="btn bg-navy color-palette" >Nouveau Catégorie</a></div> 
                         </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        
-                        <div class="form-group row">
-                            <label for="nom" class="col-sm-2 col-form-label">Nom :</label>
-                            <div class="col-sm-5">
-                                <input type="text" class="form-control" placeholder="Nom" name="nom" id="nom" value="">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group row">
-                            <button type="submit" class="btn bg-navy color-palette" style="font-size: 18px;">
-                                Submit
-                            </button>
-                        </div>
+                        <table id="mainTable" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Titre</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($blogs as $blog)
+                                <tr>
+                                    <td>{{ $blog->id }}</td>
+                                    <td>{{ $blog->titre }}</td>
+                                    <td>
+                                        <a href="" class="btn btn-sm btn-info"><i class="fa fa-edit"></i> Edit</a>
+                                        <a href="" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                     <!-- /.card-body -->
                 </div>
