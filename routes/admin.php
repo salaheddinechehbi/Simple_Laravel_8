@@ -17,8 +17,10 @@ Route::group(['namespace' => 'Back','prefix'=>'sec-admin/categories/'], function
 
 Route::group(['namespace' => 'Back','prefix'=>'sec-admin/blogs/'], function(){
 
-    Route::get('/', [BlogController::class, 'index']) -> name('blog_list');
-    
+    Route::get('/', [BlogController::class, 'index']) -> name('blogs_list');
+    Route::get('/add', [BlogController::class, 'create']) -> name('blogs_add');
+    Route::post('/save', [BlogController::class, 'store']) -> name('blogs_save');
+
 });
 
 
