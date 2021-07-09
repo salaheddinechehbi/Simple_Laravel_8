@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Back\CategorieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('sec-admin/dashbord', function () { return view('back.index'); }) -> name('dashbord');
 
-/* Route::namespace('Back') -> group(["prefix"=>"sec-admin/categorie/"], function(){
+Route::group(['namespace' => 'Back','prefix'=>'sec-admin/categories/'], function(){
 
-    //Route::get('sec-admin/categories', function () { return view('back.categorie.index'); }) -> name('categories_list');
-    Route::get('/', [UserController::class, 'index']) -> name('categories_list');
-}); */
+    Route::get('/', [CategorieController::class, 'index']) -> name('categories_list');
+});
 
 
-Route::get('sec-admin/categories', function () { return view('back.categorie.index'); }) -> name('categories_list');
+
+//Route::get('sec-admin/categories', function () { return view('back.categorie.index'); }) -> name('categories_list');
 
 Route::get('sec-admin/produits', function () { return view('back.categorie.index'); }) -> name('produits_list');
 

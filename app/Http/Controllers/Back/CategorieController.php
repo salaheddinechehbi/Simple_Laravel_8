@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Back;
 
+use App\Http\Controllers\Controller;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        //
+        return view('back.categorie.index');
     }
 
     /**
