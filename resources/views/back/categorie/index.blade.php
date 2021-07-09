@@ -26,7 +26,10 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">DataTable with default features</h3>
+                        <div class="row">
+                            <div class="col-md-8"></div>
+                            <div align="right" class="col-md-4 pull-right"><a href="{{ route('categories_add')}}" class="btn bg-navy color-palette" >Nouveau Catégorie</a></div> 
+                        </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -39,11 +42,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($categories as $categorie)
                                 <tr>
-                                    <td>Win 95+</td>
-                                    <td> 4</td>
-                                    <td>X</td>
+                                    <td>{{ $categorie->id }}</td>
+                                    <td>{{ $categorie->titre }}</td>
+                                    <td>
+                                        <a href="" class="btn btn-sm btn-info"><i class="fa fa-edit"></i> Edit</a>
+                                        <a href="" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                                    </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

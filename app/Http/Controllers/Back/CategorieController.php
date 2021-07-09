@@ -15,7 +15,9 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        return view('back.categorie.index');
+        $categories = Categorie::orderBy('id')->get();
+        return view('back.categorie.index')->with('categories', $categories);
+        //return view('back.categorie.index', ['categories' => $categories]);
     }
 
     /**
@@ -25,7 +27,7 @@ class CategorieController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.categorie.form');
     }
 
     /**
