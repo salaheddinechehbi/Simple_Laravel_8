@@ -24,7 +24,8 @@ Route::group(['namespace' => 'Back','prefix'=>'sec-admin/blogs/','middleware' =>
 
 });
 
-Route::get('login', [HomeController::class, 'login']) -> name('login');
+Route::get('sec-admin', [HomeController::class, 'login']) -> name('login');
+Route::get('sec-admin/login', [HomeController::class, 'login']) -> name('login');
 
 Route::get('sec-admin/produits', function () { return view('back.categorie.index'); }) -> name('produits_list');
 
