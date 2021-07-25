@@ -32,19 +32,20 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        
-                        <div class="form-group row">
-                            <label for="nom" class="col-sm-2 col-form-label">Nom :</label>
-                            <div class="col-sm-5">
-                                <input type="text" class="form-control" placeholder="Nom" name="nom" id="nom" value="">
+                        <form action="{{ route('categories_save') }}" method="POST">
+                            <div class="form-group row">
+                                <label for="nom" class="col-sm-2 col-form-label">Nom :</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" placeholder="Titre" name="titre" id="titre" value="">
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="form-group row">
-                            <button type="submit" class="btn bg-navy color-palette" style="font-size: 18px;">
-                                Submit
-                            </button>
-                        </div>
+                            
+                            <div class="form-group row">
+                                <button type="submit" class="btn bg-navy color-palette" style="font-size: 18px;">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
                     </div>
                     <!-- /.card-body -->
                 </div>

@@ -13,6 +13,7 @@ Route::group(['namespace' => 'Back','prefix'=>'sec-admin/categories/'], function
     Route::get('/', [CategorieController::class, 'index']) -> name('categories_list');
     Route::get('/add', [CategorieController::class, 'create']) -> name('categories_add');
     Route::post('/save', [CategorieController::class, 'store']) -> name('categories_save');
+    Route::post('/show', [CategorieController::class, 'show']) -> name('categories_show');
 
 });
 

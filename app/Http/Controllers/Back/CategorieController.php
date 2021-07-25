@@ -10,7 +10,7 @@ class CategorieController extends Controller
 {
 
     public function __construct(){
-        $this->middleware('auth') -> except('index');
+        /* $this->middleware('auth') -> except('index'); */
     }
 
     
@@ -21,7 +21,7 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        $categories = Categorie::orderBy('id')->get();
+        $categories = Categorie::orderBy('id','desc')->get();
         return view('back.categorie.index')->with('categories', $categories);
         //return view('back.categorie.index', ['categories' => $categories]);
     }
@@ -44,7 +44,9 @@ class CategorieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $categorie = new Categorie;
+        $categorie->titre = $request->titre;
+        $categorie->save();
     }
 
     /**
